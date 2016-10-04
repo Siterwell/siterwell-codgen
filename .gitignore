@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.iml
 out/
 *.ipr
@@ -143,3 +144,17 @@ samples/client/petstore/typescript-angular/**/typings
 samples/client/petstore/typescript-fetch/**/dist/
 samples/client/petstore/typescript-fetch/**/typings
 
+=======
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> a8d2ac33cb9254095605f2b268a53bfe4f94bfc5
