@@ -31,6 +31,10 @@ public class {{classname}} {
     return apiInvoker;
   }
 
+  public void setTimeout(int timeout) {
+    getInvoker().setConnectionTimeout(timeout);
+  }
+
   public void setBasePath(String basePath) {
     this.basePath = basePath;
   }

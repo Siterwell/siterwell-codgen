@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <distributionManagement>
+    <snapshotRepository>
+      <id>repo.siterwell.co.uk</id>
+      <url>s3://repo.siterwell.co.uk/snapshot</url>
+    </snapshotRepository>
+    <repository>
+      <id>repo.siterwell.co.uk</id>
+      <url>s3://repo.siterwell.co.uk/release</url>
+    </repository>
+  </distributionManagement> 
   <modelVersion>4.0.0</modelVersion>
   <groupId>{{groupId}}</groupId>
   <artifactId>{{artifactId}}</artifactId>
@@ -43,6 +53,13 @@
     </dependency>
   </dependencies>
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.kuali.maven.wagons</groupId>
+        <artifactId>maven-s3-wagon</artifactId>
+        <version>1.2.1</version>
+      </extension>
+    </extensions>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
