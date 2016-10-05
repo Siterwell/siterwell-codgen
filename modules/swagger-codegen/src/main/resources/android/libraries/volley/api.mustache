@@ -128,7 +128,7 @@ public class {{classname}} {
          if(ex.getCause() instanceof VolleyError) {
 	    VolleyError volleyError = (VolleyError)ex.getCause();
 	    if (volleyError.networkResponse != null) {
-	       throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+	       throw new ApiException(volleyError.networkResponse.statusCode, new String(volleyError.networkResponse.data));
 	    }
          }
          throw ex;
