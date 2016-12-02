@@ -1,11 +1,14 @@
 {{>licenseInfo}}
 package {{package}};
 
+import cz.msebera.android.httpclient.HttpEntity;
+import cz.msebera.android.httpclient.entity.mime.MultipartEntityBuilder;
 import {{invokerPackage}}.ApiInvoker;
 import {{invokerPackage}}.ApiException;
 import {{invokerPackage}}.Pair;
 
 import {{modelPackage}}.*;
+import java.io.ByteArrayOutputStream;
 
 import java.util.*;
 
@@ -14,9 +17,6 @@ import com.android.volley.VolleyError;
 
 {{#imports}}import {{import}};
 {{/imports}}
-
-import org.apache.http.HttpEntity;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -95,11 +95,11 @@ public class {{classname}} {
       MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
   {{#formParams}}{{#notFile}}
           if ({{paramName}} != null) {
-          localVarBuilder.addTextBody("{{baseName}}", ApiInvoker.parameterToString({{paramName}}), ApiInvoker.TEXT_PLAIN_UTF8);
+              localVarBuilder.addTextBody("{{baseName}}", ApiInvoker.parameterToString({{paramName}}), ApiInvoker.TEXT_PLAIN_UTF8);
           }
   {{/notFile}}{{#isFile}}
           if ({{paramName}} != null) {
-          localVarBuilder.addBinaryBody("{{baseName}}", {{paramName}});
+              localVarBuilder.addBinaryBody("{{baseName}}", {{paramName}});
           }
   {{/isFile}}{{/formParams}}
 
